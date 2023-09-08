@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img id="backgroundImage" src="../../assets/imagenes/Sprinkle (2).svg" alt="">
+  <ion-row id="row" class="ion-justify-content-center">
+    <ion-col size="9" class="ion-align-items-center">
+      <form action="">   
+        <ion-row id="row1" class="ion-justify-content-center">
+          <ion-img src="../../../assets/imagenes/duoc.png"></ion-img>
+        </ion-row>
+        <ion-row id="row2" class="ion-justify-content-center">
+          <ion-input color="dark" id="nombre" label="Nombre" label-placement="floating" fill="outline" placeholder="Ingrese su nombre"></ion-input>
+        </ion-row>
+        <ion-row id="row3" class="ion-justify-content-center">
+          <ion-input color="dark" id="apellido" label="Apellido" label-placement="floating" fill="outline" placeholder="Ingrese su apellido"></ion-input>
+        </ion-row>
+        <ion-row id="row4" class="ion-justify-content-center">
+          <ion-input color="dark" id="rut" label="RUT" label-placement="floating" fill="outline" placeholder="Ingrese su RUT"></ion-input>
+        </ion-row>
+        <ion-row id="row5" class="ion-justify-content-center">
+          <ion-input color="dark" id="carrera" label="Carrera" label-placement="floating" fill="outline" placeholder="Ingrese su carrera"></ion-input>
+        </ion-row>
+        <ion-row id="row6" class="ion-justify-content-center">
+          <ion-input color="dark" id="nombreUsuario" label="Nombre de usuario" label-placement="floating" fill="outline" placeholder="Ingrese un nombre de usuario"></ion-input>
+        </ion-row>
+        <ion-row id="row7" class="ion-justify-content-center">
+          <ion-input color="dark" id="contraseña" label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese una contraseña"></ion-input>
+        </ion-row>
+        <ion-row id="row8" class="ion-justify-content-center">
+          <ion-col size="9" class="ion-align-items-center">
+            <ion-button routerLink="/login" fill="solid" expand="block" shape="round">Registrarse</ion-button>
+            <br>
+            <ion-button routerLink="/home" fill="solid" expand="block" shape="round">Cancelar</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>   
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img id="backgroundImage" src="../../assets/imagenes/Sprinkle (2).svg" alt="">
+  <ion-row id="row" class="ion-justify-content-center">
+    <ion-col size="9" class="ion-align-items-center">
+      <ion-row id="row1" class="ion-justify-content-center">
+        <ion-img src="../../../assets/imagenes/duoc.png"></ion-img>       
+      </ion-row>
+      <ion-row>
+        <ion-input color="dark" id="usuario" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingrese usuario"></ion-input>
+      </ion-row>
+      <ion-row id="rowPass" class="ion-justify-content-center">
+        <ion-input color="dark" id="contraseña" label="Contraseña" type="password" label-placement="floating" fill="outline" placeholder="Ingrese contraseña"></ion-input>
+        <a routerLink="" id="restablecerPass">Restablecer contraseña</a>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-button routerLink="/login" fill="solid" expand="block" shape="round">Ingresar</ion-button>    
+      </ion-row>  
+    </ion-col>
+  </ion-row>
+</ion-content>
