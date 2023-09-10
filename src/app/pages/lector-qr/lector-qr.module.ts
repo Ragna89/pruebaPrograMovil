@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { LectorQrPageRoutingModule } from './lector-qr-routing.module';
 
 import { LectorQrPage } from './lector-qr.page';
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LectorQrPageRoutingModule
+    LectorQrPageRoutingModule,
+    ZXingScannerModule,
   ],
   declarations: [LectorQrPage]
 })

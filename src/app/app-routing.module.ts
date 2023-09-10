@@ -23,6 +23,23 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'reestablecerpass',
+    loadChildren: () => import('./pages/reestablecerpass/reestablecerpass.module').then( m => m.ReestablecerpassPageModule)
+  },
+  {
+    path: 'datosclase',
+    loadChildren: () => import('./pages/datosclase/datosclase.module').then( m => m.DatosclasePageModule)
+  },
+  {
+    path: 'error404',
+    loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule)
+  }
+
 ];
 
 @NgModule({
