@@ -10,23 +10,24 @@
     <ion-col size="9" class="ion-align-items-center">
       <h1 class="ion-text-center">¡La clase ha sido registrada con éxito!</h1>      
       <ion-card id="card">
-        <h1 class="ion-text-center">Datos Clase</h1>
-        <h3 *ngFor="let item of qrData.split(',')">{{item}}</h3>
-      </ion-card>
-      <ion-card id="card">
         <h1 class="ion-text-center">Datos Alumno</h1>
         <h3>Nombre: {{nombreGuardado}} {{apellidoGuardado}}</h3>
         <h3>Rut: {{rutGuardado}}</h3>
         <h3>Carrera: {{carreraGuardada}}</h3>
+        <h3 class="ion-text-center">Foto de Perfil</h3>
+        <ion-img id="foto" [src]="fotoGuardada" *ngIf="fotoGuardada"></ion-img>
+      </ion-card>
+      <ion-card id="card">
+        <h1 class="ion-text-center">Datos Clase</h1>
+        <h3 *ngFor="let item of qrData.split(',')">{{item}}</h3>
+        <h3>Lon-Lat: {{longitud}}, {{latitud}}</h3>
+        <h3>Ubicación: {{direccionFinal}}</h3>
       </ion-card>
       <ion-row id="row1" class="ion-justify-content-center">
         <ion-button routerLink="/lector-qr" fill="solid" expand="block" shape="round">Registrar otra clase</ion-button>    
       </ion-row>  
     </ion-col>
   </ion-row>
-
-
-
 
 
 </ion-content>

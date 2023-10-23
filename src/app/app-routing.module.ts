@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'lector-qr',
-    loadChildren: () => import('./pages/lector-qr/lector-qr.module').then( m => m.LectorQrPageModule)
+    loadChildren: () => import('./pages/lector-qr/lector-qr.module').then( m => m.LectorQrPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'registro',
@@ -29,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'datosclase',
-    loadChildren: () => import('./pages/datosclase/datosclase.module').then( m => m.DatosclasePageModule)
+    loadChildren: () => import('./pages/datosclase/datosclase.module').then( m => m.DatosclasePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'error404',
