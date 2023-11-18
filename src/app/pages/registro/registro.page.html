@@ -36,14 +36,15 @@
           </ion-row>
           
           <ion-list id="list1" class="ion-justify-content-center">
-              <ion-select color="ligth" [(ngModel)]="usuario.region" id="region" name="region" label="Region" label-placement="floating" fill="outline" placeholder="Seleccione Region">
-                <ion-select-option *ngFor="let i of listadoRegiones">{{i.nombre}}</ion-select-option>
-              </ion-select>
+            <ion-select color="ligth" [(ngModel)]="usuario.region" id="region" name="region" label="Region" label-placement="floating" fill="outline" placeholder="Seleccione Región" (ionChange)="seleccionarRegion()">
+              <ion-select-option *ngFor="let region of listadoRegiones" [value]="region.region">{{region.region}}</ion-select-option>
+            </ion-select>
           </ion-list>
+          
           <ion-list id="list2" class="ion-justify-content-center">
-              <ion-select color="ligth" [(ngModel)]="usuario.comuna" id="comuna" name="comuna" label="Comuna" label-placement="floating" fill="outline" placeholder="Selecciones Comuna">
-                <ion-select-option *ngFor="let i of listadoComunas">{{i.nombre}}</ion-select-option>
-              </ion-select>
+            <ion-select color="ligth" [(ngModel)]="usuario.comuna" id="comuna" name="comuna" label="Comuna" label-placement="floating" fill="outline" placeholder="Seleccione Comuna">
+              <ion-select-option *ngFor="let comuna of listadoComunas" [value]="comuna">{{comuna}}</ion-select-option>
+            </ion-select>
           </ion-list>
 
         </div>

@@ -17,8 +17,14 @@ export class RegistroPage implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
-    this.listaRegion();
-    this.listaComuna();
+    this.apis.obtenerRegionesYComunas().subscribe((data: any) => {
+      if (data) {
+        this.listadoRegiones = data.regiones;
+      } else {
+        // Manejar el caso de error al cargar el JSON
+        console.error('Error al cargar el JSON. Verifica la consola para más detalles.');
+      }
+    });
   }
   
   listadoRegiones: any = [];
@@ -61,18 +67,17 @@ export class RegistroPage implements OnInit {
     }
   }
 
-  listaRegion() {
-    this.apis.obtenerListadoRegiones().then((respuesta) => {
-        this.listadoRegiones = respuesta.data;
-        console.log(respuesta, this.listadoRegiones)
-    });
+  listaComunasPorRegion(idRegion: string) {
+    const regionSeleccionada = this.listadoRegiones.find((region: any) => region.region === idRegion);
+    if (regionSeleccionada) {
+      this.listadoComunas = regionSeleccionada.comunas;
+    } else {
+      this.listadoComunas = [];
+    }
   }
 
-  listaComuna() {
-    this.apis.obtenerListadoComunas().then((respuesta) => {
-      this.listadoComunas = respuesta.data;
-      console.log(respuesta, this.listadoComunas)
-    })
+  seleccionarRegion() {
+    this.listaComunasPorRegion(this.usuario.region);
   }
 
   async tomarSelfie() {

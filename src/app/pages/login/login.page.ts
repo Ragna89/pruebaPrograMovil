@@ -32,20 +32,6 @@ export class LoginPage implements OnInit {
         this.alertFunc('Ingrese Usuario y/o Contraseña', 'Porfavor ingrese los datos correspondientes');
       }
     })
-
-
-
-    this.storage.get('usuario').then(userGuardado => {
-        if (this.user.length > 0 && this.pass.length > 0) {
-          if (this.user === userGuardado.user && this.pass === userGuardado.pass) {
-            this.router.navigateByUrl('lector-qr');
-          } else {
-            this.alertFunc('Error', 'El Usuario y/o la Contraseña ingresados son incorrectos');
-          }
-        } else {
-          this.alertFunc('Ingrese Usuario y/o Contraseña', 'Porfavor ingrese los datos correspondientes');
-        };
-    });
   }
 
   async alertFunc(headerMsg:string, bodyMsg: string) {
